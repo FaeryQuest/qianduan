@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>jQuery实现左右div自适应高度完全相同 </title>
+<style type="text/css">
+<!--
+body{FONT-SIZE: 14px;background-color:#fff}
+-->
+</style>
+<style type="text/css">
+#left{background:#999999; float:left; width:100px;}
+#right{background:#0066FF; color:#fff; width:300px; float:left;}
+.clear{clear:both;}
+</style>
+</head>
+<body>
+<h3>标题</h3>
+<div id="left">
+<div style="padding:10px">
+右边文字
+</div>
+</div>
+<div id="right">
+<div style="padding:10px">
+左边文字 左边文字 左边文字 左边文字 左边文字 左边文字 左边文字 左边文字 左边文字 左边文字 左边文字 左边文字 左边文字 左边文字 左边文字 左边文字 左边文字 左边文字 左边文字 左边文字 左边文字 左边文字 左边文字 左边文字
+</div>
+</div>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.0/jquery.min.js"></script>
+<script type="text/javascript">
+function $(id){
+return document.getElementById(id)
+}
+function getHeight() {
+if ($("left").offsetHeight>=$("right").offsetHeight){
+$("right").style.height=$("left").offsetHeight + "px";
+}
+else{
+$("left").style.height=$("right").offsetHeight + "px";
+}
+}
+window.onload = function() {
+getHeight();
+}
+</script>
+<div style="clear:both"></div>
+</body>
+</html>
